@@ -16,6 +16,15 @@ type Project = {
 // === Replace with your real list ===
 const projects: Project[] = [
     {
+        id: "petcareplus",
+        title: "PetCarePlus (Mobile)",
+        description:
+            "Expo + React Native app with NativeWind, Firebase Auth/Firestore, and image uploads.",
+        tech: ["React Native", "Expo", "NativeWind", "Firebase"],
+        demo: "#",
+        repo: "#",
+    },
+    {
         id: "book-club",
         title: "Book Club Library",
         description:
@@ -36,8 +45,17 @@ const projects: Project[] = [
         // image: "/images/smart-parking.png",
     },
     {
+        id: "logistics",
+        title: "Logistics and Supply chain Management System",
+        description:
+            "Buy and Sell, Track orders, Generate Invoices",
+        tech: ["React", "TypeScript", "Express", "MongoDB", "JWT"],
+        demo: "#",
+        repo: "#",
+    },
+    {
         id: "order-mgmt",
-        title: "Order Management",
+        title: "Shion House - Order Management",
         description:
             "Search, carts, JWT auth, and role-based routes. Clean RESTful API with validation.",
         tech: ["React", "TypeScript", "Express", "MongoDB", "JWT"],
@@ -45,11 +63,20 @@ const projects: Project[] = [
         repo: "#",
     },
     {
-        id: "petcareplus",
-        title: "PetCarePlus (Mobile)",
+        id: "academy",
+        title: "Culinary Academy",
         description:
-            "Expo + React Native app with NativeWind, Firebase Auth/Firestore, and image uploads.",
-        tech: ["React Native", "Expo", "NativeWind", "Firebase"],
+            "This site: manage courses, students, instructors and payments",
+        tech: ["Java", "MySQL", "JWT"],
+        demo: "#",
+        repo: "#",
+    },
+    {
+        id: "sga",
+        title: "SGAssociation",
+        description:
+            "This is for handling legal work like deeds, lawyers, clarks and payments in the lawfirm",
+        tech: ["Java", "Layered architecture", "JavaFX", "MySQL"],
         demo: "#",
         repo: "#",
     },

@@ -1,3 +1,4 @@
+// src/sections/Hero.tsx
 import { motion } from "framer-motion";
 import type { Variants, Transition } from "framer-motion";
 import Button from "../components/Button";
@@ -10,13 +11,10 @@ const BADGES = [
     "Microservices • REST",
 ];
 
-// Variants (typed) — keep easing simple to avoid type noise
+// Variants
 const container: Variants = {
     hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: { staggerChildren: 0.08, delayChildren: 0.1 },
-    },
+    show: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 };
 
 const fadeUp: Variants = {
@@ -24,7 +22,6 @@ const fadeUp: Variants = {
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-// Smooth float for the accent card
 const FLOAT: Transition = {
     duration: 4,
     repeat: Infinity,
@@ -44,25 +41,46 @@ export default function Hero() {
                 <div className="absolute right-[-10%] bottom-[-10%] h-[260px] w-[260px] rounded-full bg-emerald-500/10 blur-2xl" />
             </div>
 
-            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 pt-28 pb-20 sm:px-8 md:grid-cols-2 md:pt-6 lg:gap-14">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 pt-20 pb-20 sm:px-8 md:grid-cols-2 md:pt-24 lg:gap-14">
                 {/* Left: Copy */}
                 <motion.div variants={container} initial="hidden" animate="show" className="flex flex-col">
                     <motion.div variants={fadeUp}>
-            <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 backdrop-blur">
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-blue-400" />
-              Hello, I’m Nehara 👋
-            </span>
-                    </motion.div>
+                        <a
+                            href="#contact"
+                            className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 backdrop-blur hover:bg-white/10"
+                        >
+                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                            Open to internships • Remote OK
+                        </a>
 
-                    <motion.h1 variants={fadeUp} className="mt-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            <span className="bg-gradient-to-r from-white via-blue-200 to-blue-400 bg-clip-text text-transparent">
-              Full-Stack Developer
+                    </motion.div>
+                    {/* NAME — primary focus */}
+                    <motion.h1
+                        variants={fadeUp}
+                        className="relative mt-4 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl leading-[1.05]"
+                    >
+            <span className="relative inline-block">
+              {/* soft glow behind name */}
+                <span
+                    aria-hidden
+                    className="absolute -inset-x-4 -inset-y-2 rounded-full bg-gradient-to-r from-blue-500/25 via-sky-400/10 to-transparent blur-2xl"
+                />
+              <span className="relative bg-gradient-to-r from-white via-blue-200 to-sky-300 bg-clip-text text-transparent">
+                Nehara Peiris
+              </span>
             </span>
-                        <br />
-                        <span className="text-slate-300">crafting clean, reliable apps.</span>
                     </motion.h1>
 
-                    <motion.p variants={fadeUp} className="mt-4 max-w-xl text-slate-300/90">
+                    {/* ROLE — secondary line */}
+                    <motion.h2
+                        variants={fadeUp}
+                        className="mt-2 text-2xl font-semibold text-slate-200 sm:text-3xl lg:text-4xl"
+                    >
+                        Full-Stack Developer
+                    </motion.h2>
+
+                    {/* Tagline */}
+                    <motion.p variants={fadeUp} className="mt-3 max-w-xl text-slate-300/90">
                         I build <span className="text-blue-300">microservices</span> with
                         <span className="font-medium"> Spring Boot</span> &<span className="font-medium"> Node.js</span>, and
                         frontends with <span className="font-medium">React</span> +<span className="font-medium"> TypeScript</span>.
@@ -90,15 +108,18 @@ export default function Hero() {
                     </motion.ul>
 
                     {/* Quick stats */}
-                    <motion.div variants={fadeUp} className="mt-8 grid w-full max-w-lg grid-cols-3 gap-3 text-center text-sm text-slate-300/90">
+                    <motion.div
+                        variants={fadeUp}
+                        className="mt-8 grid w-full max-w-lg grid-cols-3 gap-3 text-center text-sm text-slate-300/90"
+                    >
                         <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                             <div className="text-xl font-semibold text-white">15+</div>
                             <div className="mt-0.5 text-xs">Projects</div>
                         </div>
-                        <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                        {/*<div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                             <div className="text-xl font-semibold text-white">5</div>
                             <div className="mt-0.5 text-xs">Microservices</div>
-                        </div>
+                        </div>*/}
                         <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                             <div className="text-xl font-semibold text-white">2+</div>
                             <div className="mt-0.5 text-xs">Years Learning</div>
@@ -122,7 +143,7 @@ export default function Hero() {
                             </div>
                             <div>
                                 <div className="text-sm text-slate-300">Currently working on</div>
-                                <div className="text-base font-semibold text-white">Smart Parking System</div>
+                                <div className="text-base font-semibold text-white">Pet Care Plus</div>
                             </div>
                         </div>
 
@@ -132,7 +153,7 @@ export default function Hero() {
                             className="mt-5 rounded-2xl border border-white/10 bg-black/30 p-4"
                         >
                             <div className="flex items-center justify-between text-sm text-slate-300">
-                                <span>API Gateway</span>
+                                <span>Mobile Application</span>
                                 <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-emerald-300">healthy</span>
                             </div>
                             <div className="mt-2 h-2 w-full overflow-hidden rounded bg-white/10">
@@ -144,11 +165,11 @@ export default function Hero() {
                         <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
                             <div className="rounded-xl border border-white/10 bg-white/5 p-3">
                                 <div className="text-slate-400">Stack</div>
-                                <div className="mt-1 font-medium text-white">Eureka, Spring, Node</div>
+                                <div className="mt-1 font-medium text-white">ReactNative, Nativewind</div>
                             </div>
                             <div className="rounded-xl border border-white/10 bg-white/5 p-3">
                                 <div className="text-slate-400">Database</div>
-                                <div className="mt-1 font-medium text-white">MongoDB, MySQL</div>
+                                <div className="mt-1 font-medium text-white">Firebase Firestore</div>
                             </div>
                         </div>
                     </motion.div>
