@@ -1,59 +1,258 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
 import SectionHeading from "../components/SectionHeading";
-import Button from "../components/Button";
 
 export default function Contact() {
-    const email = "you@example.com";
+    // 🔧 update these
+    const CONTACT = {
+        email: "you@example.com",
+        linkedin: "https://linkedin.com/in/nehara-peiris",
+        medium: "https://medium.com/@your-handle",
+        github: "https://github.com/nehara-peiris",
+    };
+
+    // simple mailto handler (no backend needed)
+    const [name, setName] = useState("");
+    const [fromEmail, setFromEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+
+    const onSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const s = subject || "New message from portfolio";
+        const body =
+            `From: ${name} <${fromEmail}>\n\n` +
+            `${message}`;
+        const href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
+            s
+        )}&body=${encodeURIComponent(body)}`;
+        window.location.href = href;
+    };
 
     return (
-        <section
-            id="contact"
-            className="py-20 bg-gray-950 text-gray-300"
-        >
-            <div className="max-w-3xl mx-auto px-6 space-y-8 text-center">
-                {/* Heading */}
+        <section id="contact" className="py-24 text-slate-200">
+            <div className="mx-auto max-w-6xl px-6 sm:px-8">
                 <SectionHeading>Contact</SectionHeading>
 
-                {/* Card */}
-                <div className="bg-gray-900/60 border border-gray-700 rounded-2xl p-8 shadow-lg">
-                    <p className="text-lg text-gray-300">
-                        Have a <span className="text-blue-400 font-medium">role</span>,{" "}
-                        <span className="text-cyan-400 font-medium">collab</span>, or{" "}
-                        <span className="text-green-400 font-medium">idea</span>? Let’s talk.
-                    </p>
+                <div className="mt-10 grid grid-cols-1 items-start gap-10 md:grid-cols-2">
+                    {/* LEFT: headline + quick contacts */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -16 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.5 }}
+                        className="relative"
+                    >
+                        <h2 className="text-4xl font-extrabold leading-tight sm:text-5xl">
+                            Let’s <span className="text-transparent bg-gradient-to-r from-blue-300 to-sky-400 bg-clip-text">talk</span>
+                            <br />
+                            about your idea
+                        </h2>
 
-                    <div className="mt-6 flex justify-center">
-                        <Button as="a" href={`mailto:${email}`}>
-                            📧 Email Me
-                        </Button>
-                    </div>
+                        <p className="mt-4 max-w-prose text-slate-300/90">
+                            Tell me what you’re building and how I can help. Prefer email? Use the form or reach me directly via the links below.
+                        </p>
 
-                    {/* Optional Socials */}
-                    <div className="mt-6 flex justify-center gap-6 text-sm">
-                        <a
-                            href="https://github.com/nehara-peiris"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:text-white transition"
-                        >
-                            GitHub
-                        </a>
-                        <a
-                            href="https://linkedin.com/in/nehara-peiris"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:text-white transition"
-                        >
-                            LinkedIn
-                        </a>
-                        <a
-                            href={`mailto:${email}`}
-                            className="hover:text-white transition"
-                        >
-                            Email
-                        </a>
-                    </div>
+                        <div className="mt-8 space-y-3">
+                            <ContactRow
+                                label="Email"
+                                value={CONTACT.email}
+                                href={`mailto:${CONTACT.email}`}
+                                icon={
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                                        <path d="M3 7l9 7 9-7" stroke="currentColor" strokeWidth="1.5" />
+                                    </svg>
+                                }
+                            />
+                            <ContactRow
+                                label="LinkedIn"
+                                value="@nehara-peiris"
+                                href={CONTACT.linkedin}
+                                icon={
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                                        <path d="M8 10v6M8 8.5h.01M12 16v-3.5a2 2 0 1 1 4 0V16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                                    </svg>
+                                }
+                            />
+                            <ContactRow
+                                label="Medium"
+                                value="@your-handle"
+                                href={CONTACT.medium}
+                                icon={
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <circle cx="7" cy="12" r="3" />
+                                        <ellipse cx="14.5" cy="12" rx="2.5" ry="5" />
+                                        <path d="M20 7v10" />
+                                    </svg>
+                                }
+                            />
+                            <ContactRow
+                                label="GitHub"
+                                value="nehara-peiris"
+                                href={CONTACT.github}
+                                icon={
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 3a9 9 0 00-2.84 17.55c.45.08.62-.2.62-.44v-1.7c-2.53.55-3.06-1.1-3.06-1.1-.41-1.04-1-1.32-1-1.32-.82-.56.06-.55.06-.55.9.06 1.38.94 1.38.94.8 1.37 2.1.98 2.62.75.08-.6.31-.98.57-1.2-2.02-.23-4.15-1.01-4.15-4.48 0-.99.36-1.8.94-2.43-.09-.23-.41-1.16.09-2.42 0 0 .76-.24 2.49.93a8.6 8.6 0 014.53 0c1.73-1.17 2.49-.93 2.49-.93.5 1.26.18 2.19.09 2.42.59.63.94 1.44.94 2.43 0 3.48-2.14 4.25-4.18 4.47.32.27.61.82.61 1.66v2.46c0 .24.16.53.62.44A9 9 0 0012 3z" stroke="currentColor" strokeWidth="1" />
+                                    </svg>
+                                }
+                            />
+                        </div>
+
+                        {/* soft accent glow */}
+                        <span aria-hidden className="pointer-events-none absolute -left-10 -bottom-10 h-40 w-40 rounded-full bg-blue-500/10 blur-2xl" />
+                    </motion.div>
+
+                    {/* RIGHT: form card + portrait accent */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 16 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.5 }}
+                        className="relative md:pt-32"
+                    >
+                        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur">
+                            {/* top accent */}
+                            <div aria-hidden className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-sky-400/10 blur-2xl" />
+
+                            <form onSubmit={onSubmit} className="space-y-4">
+                                <div className="grid gap-4 sm:grid-cols-2">
+                                    <Field
+                                        id="name"
+                                        label="Your Name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        placeholder="Jane Doe"
+                                    />
+                                    <Field
+                                        id="email"
+                                        type="email"
+                                        label="Your Email"
+                                        value={fromEmail}
+                                        onChange={(e) => setFromEmail(e.target.value)}
+                                        placeholder="jane@example.com"
+                                    />
+                                </div>
+
+                                <Field
+                                    id="subject"
+                                    label="Subject"
+                                    value={subject}
+                                    onChange={(e) => setSubject(e.target.value)}
+                                    placeholder="Let’s build something"
+                                />
+
+                                <Field
+                                    id="message"
+                                    label="Your Message"
+                                    textarea
+                                    value={message}
+                                    onChange={(e) => setMessage(e.target.value)}
+                                    placeholder="Hello Nehara, I’d like to discuss…"
+                                />
+
+                                <div className="pt-2">
+                                    <button
+                                        type="submit"
+                                        className="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-lg transition hover:bg-blue-600/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"
+                                    >
+                                        Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
+    );
+}
+
+/* ---------- tiny building blocks ---------- */
+
+function ContactRow({
+                        label,
+                        value,
+                        href,
+                        icon,
+                    }: {
+    label: string;
+    value: string;
+    href: string;
+    icon: React.ReactNode;
+}) {
+    return (
+        <a
+            href={href}
+            target={href.startsWith("http") ? "_blank" : undefined}
+            rel={href.startsWith("http") ? "noreferrer" : undefined}
+            className="group flex items-center justify-between rounded-2xl border border-white/10 bg-slate-900/40 p-4 backdrop-blur transition hover:bg-white/10"
+        >
+            <div className="flex items-center gap-3">
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/15 ring-1 ring-white/10 text-blue-300">
+          {icon}
+        </span>
+                <div>
+                    <div className="text-xs text-slate-400">{label}</div>
+                    <div className="text-sm text-slate-200">{value}</div>
+                </div>
+            </div>
+            <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                className="text-slate-400 transition group-hover:translate-x-0.5"
+            >
+                <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+        </a>
+    );
+}
+
+function Field({
+                   id,
+                   label,
+                   textarea,
+                   type = "text",
+                   value,
+                   onChange,
+                   placeholder,
+               }: {
+    id: string;
+    label: string;
+    textarea?: boolean;
+    type?: string;
+    value: string;
+    onChange: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement>;
+    placeholder?: string;
+}) {
+    const base =
+        "w-full rounded-xl border border-white/10 bg-black/30 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-400 outline-none focus:ring-2 focus:ring-blue-500/40";
+    return (
+        <label htmlFor={id} className="block">
+            <span className="mb-1 block text-xs text-slate-400">{label}</span>
+            {textarea ? (
+                <textarea
+                    id={id}
+                    rows={5}
+                    className={base}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={placeholder}
+                    required
+                />
+            ) : (
+                <input
+                    id={id}
+                    type={type}
+                    className={base}
+                    value={value}
+                    onChange={onChange}
+                    placeholder={placeholder}
+                    required
+                />
+            )}
+        </label>
     );
 }
