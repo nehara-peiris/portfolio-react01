@@ -5,6 +5,8 @@ import Skills from "./sections/Skills";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Footer from "./components/Footer";
+import EducationAchievements from "./sections/Education.tsx";
+import Articles from "./sections/Articles.tsx";
 
 
 export default function App() {
@@ -15,7 +17,9 @@ export default function App() {
                             <Hero />
                             <About />
                             <Skills />
+                            <EducationAchievements/>
                             <Projects />
+                            <Articles/>
                             <Contact />
                     </main>
                     <Footer />

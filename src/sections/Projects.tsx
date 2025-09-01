@@ -117,7 +117,7 @@ export default function Projects() {
     }, [openAll]);
 
     return (
-        <section id="projects" className="py-20 text-slate-200">
+        <section id="projects" className="py-20 text-slate-200 bg-black">
             <div className="mx-auto max-w-6xl px-6 sm:px-8">
                 <SectionHeading>Projects</SectionHeading>
 

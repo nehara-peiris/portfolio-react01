@@ -41,7 +41,7 @@ export default function Hero() {
                 <div className="absolute right-[-10%] bottom-[-10%] h-[260px] w-[260px] rounded-full bg-emerald-500/10 blur-2xl" />
             </div>
 
-            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 pt-20 pb-20 sm:px-8 md:grid-cols-2 md:pt-24 lg:gap-14">
+            <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-6 pt-20 pb-20 sm:px-8 md:grid-cols-2 md:pt-42 lg:gap-14">
                 {/* Left: Copy */}
                 <motion.div variants={container} initial="hidden" animate="show" className="flex flex-col">
                     <motion.div variants={fadeUp}>
