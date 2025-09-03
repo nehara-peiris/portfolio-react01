@@ -12,7 +12,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="relative bg-gradient-to-b from-slate-950 to-black text-slate-300">
+        <footer className="bg-gradient-to-b from-slate-950 to-black text-slate-300">
             {/* subtle top glow */}
             <div aria-hidden className="pointer-events-none absolute -top-20 left-1/2 h-32 w-[32rem] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
 
