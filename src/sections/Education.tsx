@@ -12,7 +12,6 @@ type Edu = {
     program: string;
     period: string;
     status?: "Expected" | "Completed" | "Ongoing";
-    // detailed (shown in modal)
     bullets?: string[];
     modules?: string[];
     projects?: Project[];
@@ -156,7 +155,7 @@ export default function EducationAchievements() {
     }, [selectedEdu]);
 
     return (
-        <section id="education" className="py-20 text-slate-200">
+        <section id="education" className="py-20 text-slate-200 md:pt-30">
             <div className="mx-auto max-w-6xl px-6 sm:px-8">
                 <SectionHeading>Education & Achievements</SectionHeading>
 

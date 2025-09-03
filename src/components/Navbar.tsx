@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import ThemeToggle from "../components/ThemeToggle";
 
 // add these in order you want to show them
 const LINKS = [
@@ -8,7 +7,6 @@ const LINKS = [
     { href: "#education", label: "Education" },
     { href: "#projects", label: "Projects" },
     { href: "#writing", label: "Articles" },
-    { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -71,7 +69,6 @@ export default function Navbar() {
 
     return (
         <>
-            {/* Skip to content (a11y) */}
             <a
                 href="#about"
                 className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-blue-600 focus:px-3 focus:py-2 focus:text-white"
@@ -126,7 +123,6 @@ export default function Navbar() {
 
                         {/* Right: Theme + CTA + Mobile toggle */}
                         <div className="flex items-center gap-2">
-                            <ThemeToggle />
                             <a
                                 href="#contact"
                                 className="hidden sm:inline-flex items-center rounded-full bg-blue-600 px-3.5 py-1.5 text-sm font-medium text-white transition hover:bg-blue-600/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60"

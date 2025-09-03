@@ -1,16 +1,22 @@
 // src/sections/Articles.tsx
 import SectionHeading from "../components/SectionHeading";
 import { motion } from "framer-motion";
+import medium1 from "../assets/articles/medium1.jpg";
+import medium2 from "../assets/articles/medium2.jpg";
+import medium3 from "../assets/articles/medium3.jpg";
+import medium4 from "../assets/articles/medium4.jpg";
+import medium5 from "../assets/articles/medium5.jpg";
+
 
 type Article = {
     id: string;
     title: string;
     excerpt?: string;
-    date: string;        // ISO
-    readingTime: string; // "4 min read"
+    date: string;
+    readingTime: string;
     tags: string[];
-    url: string;         // Medium link
-    image?: string;      // optional cover (we’ll use a gradient placeholder by default)
+    url: string;
+    image?: string;
 };
 
 const ARTICLES: Article[] = [
@@ -23,6 +29,7 @@ const ARTICLES: Article[] = [
         readingTime: "4 min read",
         tags: ["Routing", "React", "React Router", "Patterns"],
         url: "https://medium.com/@shewmipeiris123/easy-routing-patterns-in-react-9264da5adfa3",
+        image: medium1,
     },
     {
         id: "arch-design-patterns",
@@ -33,6 +40,7 @@ const ARTICLES: Article[] = [
         readingTime: "7 min read",
         tags: ["Architecture", "Design Patterns", "Software Engineering"],
         url: "https://medium.com/@shewmipeiris123/architectures-and-design-patterns-for-a-robust-software-systems-6dcc7f53e48a",
+        image: medium2,
     },
     {
         id: "layered-architecture",
@@ -43,6 +51,7 @@ const ARTICLES: Article[] = [
         readingTime: "3 min read",
         tags: ["Architecture", "Layered"],
         url: "https://medium.com/@shewmipeiris123/layered-architecture-8db268235e3b",
+        image: medium3,
     },
     {
         id: "java-flow-control",
@@ -53,6 +62,7 @@ const ARTICLES: Article[] = [
         readingTime: "6 min read",
         tags: ["Java", "Control Flow"],
         url: "https://medium.com/@shewmipeiris123/can-we-control-the-flow-of-java-program-e7a2501764e3",
+        image: medium4,
     },
     {
         id: "java-intro",
@@ -63,6 +73,7 @@ const ARTICLES: Article[] = [
         readingTime: "4 min read",
         tags: ["Java", "Programming"],
         url: "https://medium.com/@shewmipeiris123/lets-connect-machines-and-human-through-java-40cb41ecabd1",
+        image: medium5,
     },
 ];
 
@@ -77,7 +88,7 @@ const card = {
 
 export default function Articles() {
     return (
-        <section id="writing" className="py-20 text-slate-200 scroll-mt-24">
+        <section id="writing" className="py-12 text-slate-200 scroll-mt-24">
             <div className="mx-auto max-w-6xl px-6 sm:px-8">
                 <SectionHeading>Writing</SectionHeading>
 
@@ -86,7 +97,7 @@ export default function Articles() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.2 }}
-                    className="mt-8 grid gap-6 md:grid-cols-3"
+                    className="mt-8 grid gap-6 md:grid-cols-5"
                 >
                     {ARTICLES.map((a) => (
                         <motion.article

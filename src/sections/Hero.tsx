@@ -89,7 +89,7 @@ export default function Hero() {
                     {/* CTAs */}
                     <motion.div variants={fadeUp} className="mt-6 flex flex-wrap items-center gap-3">
                         <Button as="a" href="#projects">🚀 View Projects</Button>
-                        <Button as="a" variant="ghost" href="/CV.pdf">📄 Download CV</Button>
+                        <Button as="a" variant="ghost" href="/Nehara%20Peiris%20CV.pdf">📄 Download CV</Button>
                     </motion.div>
 
                     {/* Tech badges */}
@@ -110,19 +110,23 @@ export default function Hero() {
                     {/* Quick stats */}
                     <motion.div
                         variants={fadeUp}
-                        className="mt-8 grid w-full max-w-lg grid-cols-3 gap-3 text-center text-sm text-slate-300/90"
+                        className="mt-8 grid w-full grid-cols-4 gap-3 text-center text-sm text-slate-300/90"
                     >
                         <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                             <div className="text-xl font-semibold text-white">15+</div>
                             <div className="mt-0.5 text-xs">Projects</div>
                         </div>
-                        {/*<div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
-                            <div className="text-xl font-semibold text-white">5</div>
-                            <div className="mt-0.5 text-xs">Microservices</div>
-                        </div>*/}
                         <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
                             <div className="text-xl font-semibold text-white">2+</div>
                             <div className="mt-0.5 text-xs">Years Learning</div>
+                        </div>
+                        <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                            <div className="text-xl font-semibold text-white">30+</div>
+                            <div className="mt-0.5 text-xs">Code Repos</div>
+                        </div>
+                        <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+                            <div className="text-xl font-semibold text-white">5+</div>
+                            <div className="mt-0.5 text-xs">Coding certifications</div>
                         </div>
                     </motion.div>
                 </motion.div>

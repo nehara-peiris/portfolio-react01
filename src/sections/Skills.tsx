@@ -90,7 +90,7 @@ const card: Variants = {
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-20 text-slate-200 bg-black">
+        <section id="skills" className="py-20 text-slate-200 bg-black md:pt-30">
             <div className="mx-auto max-w-6xl px-6 sm:px-8">
                 <SectionHeading>Skills</SectionHeading>
 

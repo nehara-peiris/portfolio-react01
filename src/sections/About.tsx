@@ -3,7 +3,7 @@ import portrait from "../assets/neha.png";
 
 export default function AboutMinimalDark() {
     return (
-        <section id="about" className="py-20 text-slate-200">
+        <section id="about" className="py-20 text-slate-200 md:pt-30">
             <div className="mx-auto max-w-6xl px-6 sm:px-8">
                 <SectionHeading>About</SectionHeading>
 
@@ -52,7 +52,7 @@ export default function AboutMinimalDark() {
                         {/* Round category buttons — desaturated glass with unified blue/cyan tints */}
                         <div className="mt-8 flex flex-wrap gap-4">
                             <a
-                                href="../assets/CV.pdf"
+                                href="Nehara%20Peiris%20CV.pdf"
                                 className="inline-flex h-16 w-16 items-center justify-center rounded-full
                            bg-white/5 ring-1 ring-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.02)]
                            hover:bg-white/10 transition

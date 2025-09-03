@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "../components/SectionHeading";
 import Button from "../components/Button";
+import petcareIMG from "../assets/projects/petcareplus.png";
+import bookclubImg from "../assets/projects/bookclub.png";
+import smartparkImg from "../assets/projects/smartpark.png";
+import logisticaImg from "../assets/projects/logistica.png";
+import shionhouseImg from "../assets/projects/shionhouse.png";
+import culinaryImg from "../assets/projects/culinary.png";
+import sgaImg from "../assets/projects/sga.png";
+import portfolioImg from "../assets/projects/portfolio.png";
 
 type Project = {
     id: string;
@@ -22,7 +30,8 @@ const projects: Project[] = [
             "Expo + React Native app with NativeWind, Firebase Auth/Firestore, and image uploads.",
         tech: ["React Native", "Expo", "NativeWind", "Firebase"],
         demo: "#",
-        repo: "#",
+        repo: "https://github.com/nehara-peiris/PetCarePlus.git",
+        image: petcareIMG,
     },
     {
         id: "book-club",
@@ -30,9 +39,9 @@ const projects: Project[] = [
         description:
             "Full-stack MERN app with lending, overdue alerts, email notifications, and image uploads.",
         tech: ["React", "TypeScript", "Tailwind", "Node", "Express", "MongoDB"],
-        demo: "#",
-        repo: "#",
-        // image: "/images/bookclub.png",
+        demo: "https://book-club-frontend-eight.vercel.app/",
+        repo: "https://github.com/nehara-peiris/BookClub-frontend.git",
+        image: bookclubImg,
     },
     {
         id: "smart-parking",
@@ -41,8 +50,8 @@ const projects: Project[] = [
             "Microservices (Spring Boot + Node) with Eureka, API Gateway, payments, and dashboards.",
         tech: ["Spring Boot", "Node.js", "MongoDB", "JWT"],
         demo: "#",
-        repo: "#",
-        // image: "/images/smart-parking.png",
+        repo: "https://github.com/nehara-peiris/SmartPark.git",
+        image: smartparkImg,
     },
     {
         id: "logistics",
@@ -50,8 +59,9 @@ const projects: Project[] = [
         description:
             "Buy and Sell, Track orders, Generate Invoices",
         tech: ["React", "TypeScript", "Express", "MongoDB", "JWT"],
-        demo: "#",
-        repo: "#",
+        demo: "https://logistics-and-supply-chain-management-system.vercel.app/",
+        repo: "https://github.com/nehara-peiris/LogisticsAndSupplyChainManagementSystem.git",
+        image: logisticaImg,
     },
     {
         id: "order-mgmt",
@@ -60,7 +70,8 @@ const projects: Project[] = [
             "Search, carts, JWT auth, and role-based routes. Clean RESTful API with validation.",
         tech: ["React", "TypeScript", "Express", "MongoDB", "JWT"],
         demo: "#",
-        repo: "#",
+        repo: "https://github.com/nehara-peiris/WebApp-Ecommerce.git",
+        image: shionhouseImg,
     },
     {
         id: "academy",
@@ -69,7 +80,8 @@ const projects: Project[] = [
             "This site: manage courses, students, instructors and payments",
         tech: ["Java", "MySQL", "JWT"],
         demo: "#",
-        repo: "#",
+        repo: "https://github.com/nehara-peiris/TheCulinaryAcademyManagement.git",
+        image: culinaryImg,
     },
     {
         id: "sga",
@@ -78,7 +90,8 @@ const projects: Project[] = [
             "This is for handling legal work like deeds, lawyers, clarks and payments in the lawfirm",
         tech: ["Java", "Layered architecture", "JavaFX", "MySQL"],
         demo: "#",
-        repo: "#",
+        repo: "https://github.com/nehara-peiris/SGA-LayeredArchitecture.git",
+        image: sgaImg,
     },
     {
         id: "portfolio-react",
@@ -86,8 +99,9 @@ const projects: Project[] = [
         description:
             "This site: modern hero, glass UI, motion, dark gradient theme, and responsive layout.",
         tech: ["React", "Vite", "Tailwind", "Framer Motion"],
-        demo: "#",
-        repo: "#",
+        demo: "https://portfolio-react01-jade.vercel.app/",
+        repo: "https://github.com/nehara-peiris/portfolio-react01.git",
+        image: portfolioImg,
     },
 ];
 
@@ -117,7 +131,7 @@ export default function Projects() {
     }, [openAll]);
 
     return (
-        <section id="projects" className="py-20 text-slate-200 bg-black">
+        <section id="projects" className="py-20 text-slate-200 bg-black md:pt-30">
             <div className="mx-auto max-w-6xl px-6 sm:px-8">
                 <SectionHeading>Projects</SectionHeading>
 
@@ -180,9 +194,10 @@ export default function Projects() {
                                 <div className="flex items-center justify-between border-b border-white/10 p-4 sm:p-5">
                                     <div>
                                         <h3 id="all-projects" className="text-lg font-semibold text-white">
-                                            All Projects
+                                            More Projects
                                         </h3>
                                         <p className="text-xs text-slate-400">Press Esc to close</p>
+                                        <p className="text-xs text-slate-400">View all <a href="https://github.com/nehara-peiris">@github</a></p>
                                     </div>
                                     <button
                                         onClick={() => setOpenAll(false)}
