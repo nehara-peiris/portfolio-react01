@@ -13,9 +13,6 @@ export default function Footer() {
 
     return (
         <footer className="bg-gradient-to-b from-slate-950 to-black text-slate-300">
-            {/* subtle top glow */}
-            <div aria-hidden className="pointer-events-none absolute -top-20 left-1/2 h-32 w-[32rem] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
-
             <div className="mx-auto max-w-6xl px-6 py-14 text-center sm:px-8">
                 <h3 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
                     Nehara Peiris
