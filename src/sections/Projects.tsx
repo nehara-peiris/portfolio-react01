@@ -29,7 +29,7 @@ const projects: Project[] = [
         description:
             "Expo + React Native app with NativeWind, Firebase Auth/Firestore, and image uploads.",
         tech: ["React Native", "Expo", "NativeWind", "Firebase"],
-        demo: "#",
+        demo: "https://youtu.be/1L9em-g2Qks?si=JY7AiRklBfLcZGvz",
         repo: "https://github.com/nehara-peiris/PetCarePlus.git",
         image: petcareIMG,
     },
@@ -49,7 +49,7 @@ const projects: Project[] = [
         description:
             "Microservices (Spring Boot + Node) with Eureka, API Gateway, payments, and dashboards.",
         tech: ["Spring Boot", "Node.js", "MongoDB", "JWT"],
-        demo: "#",
+        demo: "#projects",
         repo: "https://github.com/nehara-peiris/SmartPark.git",
         image: smartparkImg,
     },
@@ -59,7 +59,7 @@ const projects: Project[] = [
         description:
             "Buy and Sell, Track orders, Generate Invoices",
         tech: ["React", "TypeScript", "Express", "MongoDB", "JWT"],
-        demo: "https://logistics-and-supply-chain-management-system.vercel.app/",
+        demo: "https://youtu.be/2cKKzdC2Dxg?si=XeXO-PMSJHNLvuBg",
         repo: "https://github.com/nehara-peiris/LogisticsAndSupplyChainManagementSystem.git",
         image: logisticaImg,
     },
@@ -69,7 +69,7 @@ const projects: Project[] = [
         description:
             "Search, carts, JWT auth, and role-based routes. Clean RESTful API with validation.",
         tech: ["React", "TypeScript", "Express", "MongoDB", "JWT"],
-        demo: "#",
+        demo: "https://youtu.be/epyY_-VICz0?si=hhiR4LwIrQ73BlLi",
         repo: "https://github.com/nehara-peiris/WebApp-Ecommerce.git",
         image: shionhouseImg,
     },
